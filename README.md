@@ -3,16 +3,16 @@
 
 ## TODOs
 
-- [ ] Project setup & templates
-  - [ ] Configure app
-  - [ ] Templates
-  - [ ] Views & URLs
-  - [ ] Static files
-  - [ ] Main template
-  - [ ] Navbar
-  - [ ] Store.html
-  - [ ] Cart.html
-  - [ ] Checkout.html
+- [x] Project setup & templates
+  - [x] Configure app
+  - [x] Templates
+  - [x] Views & URLs
+  - [x] Static files
+  - [x] Main template
+  - [x] Navbar
+  - [x] Store.html
+  - [x] Cart.html
+  - [x] Checkout.html
 - [ ] Data structure
   - [ ] Models
   - [ ] Render products
