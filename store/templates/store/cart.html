@@ -7,9 +7,13 @@
                 <a href="{% url 'store' %}" class="btn btn-outline-dark">&#x2190; Continue Shopping</a>
                 <br /><br />
                 <table class="table">
-                    <tr style="border: red 1px solid">
-                        <th style="text-align: center; vertical-align: middle"><h5>Items: <strong>3</strong></h5></th>
-                        <th style="text-align: center; vertical-align: middle"><h5>Total: <strong>$42.00</strong></h5></th>
+                    <tr>
+                        <th style="text-align: center; vertical-align: middle">
+                            <h5>Number of Items: <strong>{{ order.get_total_cart_n_items }}</strong></h5>
+                        </th>
+                        <th style="text-align: center; vertical-align: middle">
+                            <h5>Total Price: <strong>${{ order.get_total_cart_price|floatformat:2 }}</strong></h5>
+                        </th>
                         <th style="text-align: center; vertical-align: middle">
                             <a href="{% url 'checkout' %}" class="btn btn-success">
                                 Checkout
@@ -27,21 +31,23 @@
                     <div style="flex: 1"><strong>Quantity</strong></div>
                     <div style="flex: 1"><strong>Total</strong></div>
                 </div>
+                {% for item in items %}
                 <div class="cart-row">
                     <div style="flex: 2">
-                        <img src="{% static 'images/placeholder.png' %}" alt="" class="row-image">
+                        <img src="{{ item.product.image_url }}" alt="" class="row-image">
                     </div>
-                    <div style="flex: 2"><p>Product 1</p></div>
-                    <div style="flex: 1"><p>$19.99</p></div>
+                    <div style="flex: 2"><p>{{ item.product.name }}</p></div>
+                    <div style="flex: 1"><p>${{ item.product.price|floatformat:2 }}</p></div>
                     <div style="flex: 1">
-                        <p class="quantity">3</p>
+                        <p class="quantity">x{{ item.quantity }}</p>
                         <div class="quantity">
                             <img src="{% static 'images/arrow-up.png' %}" alt="" class="change-quantity">
                             <img src="{% static 'images/arrow-down.png' %}" alt="" class="change-quantity">
                         </div>
                     </div>
-                    <div style="flex: 1"><p>$59.97</p></div>
+                    <div style="flex: 1"><p>${{ item.get_total_price|floatformat:2 }}</p></div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>

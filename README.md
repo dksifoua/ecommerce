@@ -13,11 +13,11 @@
   - [x] Store.html
   - [x] Cart.html
   - [x] Checkout.html
-- [ ] Data structure
-  - [ ] Models
-  - [ ] Render products
-  - [ ] Product image field
-  - [ ] User cart
+- [x] Data structure
+  - [x] Models
+  - [x] Render products
+  - [x] Product image field
+  - [x] User cart
 - [ ] Site functionality
   - [ ] Add to cart
   - [ ] Update cart
