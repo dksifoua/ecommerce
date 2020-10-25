@@ -24,13 +24,13 @@
   - [x] Shipping address
   - [x] Checkout form
   - [x] Process order
-- [ ] Guest checkout
-  - [ ] Set cookie's
-  - [ ] Render cart total
-  - [ ] Build order
-  - [ ] CookieCart() function
-  - [ ] CartData()
-  - [ ] Checkout
+- [x] Guest checkout
+  - [x] Set cookie's
+  - [x] Render cart total
+  - [x] Build order
+  - [x] CookieCart() function
+  - [x] CartData()
+  - [x] Checkout
 - [ ] Payment integration
   - [ ] Paybal button
   - [ ] Sandbox account
