@@ -18,12 +18,12 @@
   - [x] Render products
   - [x] Product image field
   - [x] User cart
-- [ ] Site functionality
-  - [ ] Add to cart
-  - [ ] Update cart
-  - [ ] Shipping address
-  - [ ] Checkout form
-  - [ ] Process order
+- [x] Site functionalities
+  - [x] Add to cart
+  - [x] Update cart
+  - [x] Shipping address
+  - [x] Checkout form
+  - [x] Process order
 - [ ] Guest checkout
   - [ ] Set cookie's
   - [ ] Render cart total

@@ -1,5 +1,6 @@
 {% extends 'store/main.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
     <div class="row">
         <div class="col-lg-12">
@@ -12,7 +13,7 @@
                             <h5>Number of Items: <strong>{{ order.get_total_cart_n_items }}</strong></h5>
                         </th>
                         <th style="text-align: center; vertical-align: middle">
-                            <h5>Total Price: <strong>${{ order.get_total_cart_price|floatformat:2 }}</strong></h5>
+                            <h5>Total Price: <strong>${{ order.get_total_cart_price|floatformat:2|intcomma }}</strong></h5>
                         </th>
                         <th style="text-align: center; vertical-align: middle">
                             <a href="{% url 'checkout' %}" class="btn btn-success">
@@ -41,11 +42,13 @@
                     <div style="flex: 1">
                         <p class="quantity">x{{ item.quantity }}</p>
                         <div class="quantity">
-                            <img src="{% static 'images/arrow-up.png' %}" alt="" class="change-quantity">
-                            <img src="{% static 'images/arrow-down.png' %}" alt="" class="change-quantity">
+                            <img data-product="{{ item.product.id }}" data-action="add"
+                                 src="{% static 'images/arrow-up.png' %}" alt="" class="update-cart change-quantity">
+                            <img data-product="{{ item.product.id }}" data-action="remove"
+                                 src="{% static 'images/arrow-down.png' %}" alt="" class="update-cart change-quantity">
                         </div>
                     </div>
-                    <div style="flex: 1"><p>${{ item.get_total_price|floatformat:2 }}</p></div>
+                    <div style="flex: 1"><p>${{ item.get_total_price|floatformat:2|intcomma }}</p></div>
                 </div>
                 {% endfor %}
             </div>
